@@ -1,0 +1,15 @@
+.age_container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.age_container p.headline {
+    font-size: 0.9rem;
+}
+.age_container p {
+    margin:0;
+    padding: 0;
+    text-align: center;
+}

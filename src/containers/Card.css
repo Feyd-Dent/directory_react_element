@@ -1,0 +1,176 @@
+.directory-card-full {
+    /* position: relative;
+    width: 600px;
+    height:165px;
+    border: 2px black solid; */
+    /* transition:all 0.5s ease; */
+    overflow: hidden;
+}
+
+.directory-card.mini {
+    margin:0;
+    padding:0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 45px 35px 60px 15px;
+    grid-template-areas:
+    "logo logo title title title title title title"
+    "logo logo address address address phone phone phone"
+    "logo logo sitestyle sitecost sitefood siteage sitefps siteukara"
+    "logo logo . . . sitelink sitelink sitelink";
+    /* padding:0.5rem; */
+    justify-items: center;
+    align-items: center;
+    width: 600px;
+    height:165px;
+    border: 2px black solid;
+    /* transition:all 0.5s ease; */
+}
+
+.card-logo {
+    grid-area: logo;
+    margin: auto;
+    /* transition:all 0.5s ease; */
+}
+.card-title {
+    grid-area: title;
+    font-size: 1.3rem;
+    padding:0;
+    margin:0;
+    /* transition:all 0.5s ease; */
+}
+.card-address {
+    grid-area: address;
+    padding:0;
+    margin:0;
+    /* transition:all 0.5s ease; */
+}
+.card-number {
+    grid-area: phone;
+    padding:0;
+    margin:0;
+    /* transition:all 0.5s ease; */
+}
+.card-style {
+    grid-area: sitestyle;
+    height: 60px;
+    /* transition:all 0.5s ease; */
+}
+.card-cost {
+    grid-area: sitecost;
+    height: 60px;
+    /* transition:all 0.5s ease; */
+}
+.card-food {
+    grid-area: sitefood;
+    height: 60px;
+    /* transition:all 0.5s ease; */
+}
+.card-age {
+    grid-area: siteage;
+    height: 60px;
+    /* transition:all 0.5s ease; */
+}
+.card-fps {
+    grid-area: sitefps;
+    height: 60px;
+    margin:0;
+    padding: 0;
+    /* transition:all 0.5s ease; */
+}
+.card-ukara {
+    grid-area: siteukara;
+    height: 60px;
+    /* transition:all 0.5s ease; */
+    /* width: 150px; */
+    /* height: 150px; */
+}
+/* .card-ukara.mini svg {
+    width: 150px;
+    height: 150px;
+} */
+.card-link {
+    grid-area: sitelink;
+    transition:all 0.5s ease;
+    /* position: absolute;
+    right:0;
+    bottom:0;
+    padding: 2px;
+    margin:2px; */
+}
+.maxi, .mini, .maxi p, .mini p, .maxi img, .mini img {
+    transition: all 0.5s ease;
+}
+.card-description, .card-address, .card-title, .card-logo {
+    cursor: pointer;
+}
+.card-description.maxi {
+    grid-area: description;
+}
+.card-description.maxi h6 {
+    font-size: 2rem;
+    margin: 0 auto;
+}
+
+.directory-card.maxi {
+    height: 580px;
+    width: 580px;
+    border: 2px black solid;
+    margin:0;
+    padding:10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "logo logo title title title title title title"
+    "logo logo address address address phone phone phone"
+    "sitestyle sitestyle sitestyle sitestyle description description description description"
+    "sitecost sitecost sitecost sitecost description description description description"
+    "sitefood sitefood sitefood sitefood description description description description "
+    "siteage siteage siteage siteage description description description description "
+    "sitefps sitefps sitefps sitefps description description description description "
+    "siteukara siteukara siteukara siteukara . sitelink sitelink sitelink";
+    /* transition:all 0.5s ease; */
+}
+
+
+.card-title {
+}
+.card-address {
+}
+.card-number {
+}
+.icon.maxi {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+.icon {
+    cursor: pointer;
+}
+.icon.maxi > :first-child {
+    flex-grow: 1;
+    min-width: 60px;
+}
+.icon.maxi > :last-child {
+    flex-grow: 2;
+    text-align: center;
+}
+.icon.maxi > p {
+    padding: 10px;
+}
+.icon.maxi > h6 {
+    padding: 10px;
+}
+
+.card-food {
+}
+.card-age {
+}
+.card-fps {
+}
+.card-ukara {
+}
+
