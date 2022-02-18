@@ -4,24 +4,6 @@ import './SiteFPS.css';
 
 const SiteFPS = ({ fpsInput1, fpsInput2, fpsInput3, expanded, setClicked }) => {
 
-    // const renderNumbers = ( fpsInput1, fpsInput2, fpsInput3 ) => {
-    //     let textReturn = '';
-    //     if(!isNaN(fpsInput1)) {
-    //         textReturn += `<p>${fpsInput1}</p>`
-    //         if(!isNaN(fpsInput2)) {
-    //             textReturn += `<p>${fpsInput2}</p>`
-    //         }
-    //             if(!isNaN(fpsInput3)) {
-    //                 textReturn += `<p>${fpsInput3}</p>`
-    //             }
-    //     }
-    //     if(textReturn === ''){
-    //         console.log(isNaN(fpsInput1), 'oops!')
-    //         return(<p>NA</p>)
-    //     }
-    //     console.log(textReturn);
-    //     return textReturn;
-    // }
 
     const renderNumbers = ( fpsInput, firstCall = false, setClicked ) => {
         let textReturn = '';
@@ -50,7 +32,7 @@ const SiteFPS = ({ fpsInput1, fpsInput2, fpsInput3, expanded, setClicked }) => {
 
             </div>
             {expanded ? 
-            <p>Max FPS levels for AEGs, DMRs and Bolt acation snipers if available.</p> : ''
+            <p>Max FPS levels for AEGs, DMRs and Bolt action snipers if available.</p> : ''
             }
         </div>
     )

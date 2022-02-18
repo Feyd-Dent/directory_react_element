@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Directory from './containers/Directory';
 import Filters from './containers/Filters';
+import FilterOpenToggle from './components/FilterOpenToggle';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
       updatedDirectoryArray: [],
       siteType: '',
       foodAvailable: '',
-      ukaraStatus: undefined
+      ukaraStatus: undefined,
+      filtersOpen: false
     }
   }
 
@@ -23,7 +25,7 @@ class App extends Component {
   // Get initial array from external source.
   getDirectoryArray = async () => {
     try {
-      const directoryReturn = await fetch('../testobj.json');
+      const directoryReturn = await fetch("./testobj2.json");
       const directoryArray = await directoryReturn.json();
       this.setState({ directoryIndex: directoryArray });
       if (this.state.updatedDirectoryArray.length === 0) {
@@ -75,6 +77,10 @@ class App extends Component {
         })
 
     }
+
+  toggleFilters = (current) => {
+    this.setState({ filtersOpen: current })
+  }
   
   updateFilters = (event) => {
     if (event.target.id === "site_type") {
@@ -103,18 +109,24 @@ class App extends Component {
   render() {
     return (
       <div className="directory_full_page">
-        <Filters 
-        sitelist={this.state.updatedDirectoryArray} 
-        updateFilters={this.updateFilters}
-        siteType={this.state.siteType}
-        foodAvailable={this.state.foodAvailable} 
-        ukaraStatus={this.state.ukaraStatus} 
-        />
         <Directory 
         sitelist={this.state.updatedDirectoryArray} 
         filterSiteType={this.state.siteType}
         filterFood={this.state.foodAvailable} 
         filterUkara={this.state.ukaraStatus} 
+        />
+        <FilterOpenToggle 
+        toggleFilters={this.toggleFilters}
+        filtersOpen={this.state.filtersOpen}
+        />
+        <Filters 
+        toggleFilters={this.toggleFilters}
+        filtersOpen={this.state.filtersOpen}
+        sitelist={this.state.updatedDirectoryArray} 
+        updateFilters={this.updateFilters}
+        siteType={this.state.siteType}
+        foodAvailable={this.state.foodAvailable} 
+        ukaraStatus={this.state.ukaraStatus} 
         />
       </div>
     );

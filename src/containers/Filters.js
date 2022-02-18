@@ -1,9 +1,13 @@
 import React from 'react';
+import FilterOpenToggle from '../components/FilterOpenToggle';
+import './Filters.css';
 
-const Filters =({ sitelist, siteType, foodAvailable, updateFilters, ukaraStatus }) => {
+const Filters =({ toggleFilters, filtersOpen, siteType, foodAvailable, updateFilters, ukaraStatus }) => {
   
+
     return (
-    <div className="filter_pane">
+    <div className={filtersOpen? "filter_pane show" : "filter_pane" }>
+        <div className="filters">
      <h2>Select a preference to narrow down the choices!</h2>
      <div className='directory_dropowns'>
 
@@ -45,6 +49,11 @@ const Filters =({ sitelist, siteType, foodAvailable, updateFilters, ukaraStatus 
          </div>
 
      </div>
+        <FilterOpenToggle 
+        toggleFilters={toggleFilters}
+        filtersOpen={filtersOpen}
+        />
+        </div>
     </div>
     )
   ;

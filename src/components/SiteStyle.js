@@ -1,5 +1,5 @@
 // import React from 'react';
-import {ReactComponent as SiteStyleIcon} from './card-icons/tree.svg';
+// import {ReactComponent as SiteStyleIcon} from './card-icons/tree.svg';
 
 
 const SiteStyle = ({ styleInput, expanded, setClicked }) => {
@@ -11,7 +11,7 @@ const SiteStyle = ({ styleInput, expanded, setClicked }) => {
                 if(expanded) {
                   setClicked(!expanded)}}}
                       >
-            <SiteStyleIcon />
+                          <img src={require("./card-icons/tree.svg").default} alt="The site is primarily or mainly outdoors" height="60px" width="60px" />
             {expanded ? <p>This is a site primarily or mainly outdoors</p> : ''}
             </div>
         );

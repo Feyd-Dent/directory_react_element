@@ -10,7 +10,7 @@ const SiteAge = ({ ageInput, expanded, setClicked }) => {
             textReturn = ageInput
         }
         if(textReturn === '' && ageInput === false){
-            return(<p>Not Known</p>)
+            return(<p className="age_text">Not Known</p>)
         }
         return (<p>{textReturn}+</p>);
     }
