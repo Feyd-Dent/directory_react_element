@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/directory_react_element/static/css/main.92d9a002.css",
+    "main.css": "/directory_react_element/static/css/main.84aa519a.css",
     "main.js": "/directory_react_element/static/js/main.07283cc9.js",
     "static/js/787.429dcf38.chunk.js": "/directory_react_element/static/js/787.429dcf38.chunk.js",
     "static/media/ukara.svg": "/directory_react_element/static/media/ukara.9728f98da5c144279bb1c5e5e2ada40f.svg",
@@ -11,12 +11,12 @@
     "static/media/31.webp": "/directory_react_element/static/media/31.7669228b73b951d9e0ff.webp",
     "static/media/hamburgerCheck.svg": "/directory_react_element/static/media/hamburgerCheck.c7f6817c441e7b6a846f1f72fe9767a8.svg",
     "index.html": "/directory_react_element/index.html",
-    "main.92d9a002.css.map": "/directory_react_element/static/css/main.92d9a002.css.map",
+    "main.84aa519a.css.map": "/directory_react_element/static/css/main.84aa519a.css.map",
     "main.07283cc9.js.map": "/directory_react_element/static/js/main.07283cc9.js.map",
     "787.429dcf38.chunk.js.map": "/directory_react_element/static/js/787.429dcf38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92d9a002.css",
+    "static/css/main.84aa519a.css",
     "static/js/main.07283cc9.js"
   ]
 }
