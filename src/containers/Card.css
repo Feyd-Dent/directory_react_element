@@ -6,6 +6,9 @@
     /* transition:all 0.5s ease; */
     overflow: hidden;
 }
+.directory-card-full.mini {
+    /* width: calc(100vw - 4px); */
+}
 
 .directory-card.mini {
     margin:0;
@@ -23,7 +26,6 @@
     /* padding:0.5rem; */
     justify-items: center;
     align-items: center;
-    width: 100vw;
     height:27.5vw;
     border: 2px black solid;
     /* transition:all 0.5s ease; */

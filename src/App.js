@@ -25,7 +25,7 @@ class App extends Component {
   // Get initial array from external source.
   getDirectoryArray = async () => {
     try {
-      const directoryReturn = await fetch("./testobj2.json");
+      const directoryReturn = await fetch("./testobj3.json");
       const directoryArray = await directoryReturn.json();
       this.setState({ directoryIndex: directoryArray });
       if (this.state.updatedDirectoryArray.length === 0) {
