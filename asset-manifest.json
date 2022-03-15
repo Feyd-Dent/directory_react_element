@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/directory_react_element/static/css/main.b32bb012.css",
-    "main.js": "/directory_react_element/static/js/main.07283cc9.js",
+    "main.css": "/directory_react_element/static/css/main.7e5e9271.css",
+    "main.js": "/directory_react_element/static/js/main.20b1c67e.js",
     "static/js/787.429dcf38.chunk.js": "/directory_react_element/static/js/787.429dcf38.chunk.js",
     "static/media/ukara.svg": "/directory_react_element/static/media/ukara.9728f98da5c144279bb1c5e5e2ada40f.svg",
     "static/media/17.webp": "/directory_react_element/static/media/17.1c9fdbd2c5b325926121.webp",
@@ -11,12 +11,12 @@
     "static/media/31.webp": "/directory_react_element/static/media/31.7669228b73b951d9e0ff.webp",
     "static/media/hamburgerCheck.svg": "/directory_react_element/static/media/hamburgerCheck.c7f6817c441e7b6a846f1f72fe9767a8.svg",
     "index.html": "/directory_react_element/index.html",
-    "main.b32bb012.css.map": "/directory_react_element/static/css/main.b32bb012.css.map",
-    "main.07283cc9.js.map": "/directory_react_element/static/js/main.07283cc9.js.map",
+    "main.7e5e9271.css.map": "/directory_react_element/static/css/main.7e5e9271.css.map",
+    "main.20b1c67e.js.map": "/directory_react_element/static/js/main.20b1c67e.js.map",
     "787.429dcf38.chunk.js.map": "/directory_react_element/static/js/787.429dcf38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b32bb012.css",
-    "static/js/main.07283cc9.js"
+    "static/css/main.7e5e9271.css",
+    "static/js/main.20b1c67e.js"
   ]
 }
