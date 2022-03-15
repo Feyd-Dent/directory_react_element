@@ -18,7 +18,6 @@ const Directory =({ sitelist, filterSiteType, filterFood, filterUkara, filterCou
           return null;
         };
         if(filterCounty.toLowerCase() !== sitelist[i].county.toLowerCase() && filterCounty !== '') {
-          console.log("filter", filterCounty.toLowerCase(), "Sitelist",  sitelist[i].county.toLowerCase());
           return null;
         };
         return (

@@ -4,10 +4,20 @@
     height:165px;
     border: 2px black solid; */
     /* transition:all 0.5s ease; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .directory-card-full.mini {
     /* width: calc(100vw - 4px); */
+}
+
+li {
+    list-style: none;
+}
+
+.noresults {
+    /* width: 100%; */
+    margin: 0;
+    padding:0;
 }
 
 .directory-card.mini {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Directory from './containers/Directory';
+import NoResultCard from './components/NoResultCard';
 import Filters from './containers/Filters';
 import FilterOpenToggle from './components/FilterOpenToggle';
 import './App.css';
@@ -15,7 +16,8 @@ class App extends Component {
       siteCounty: '',
       counties: [],
       ukaraStatus: undefined,
-      filtersOpen: false
+      filtersOpen: false,
+      noResults: false
     }
   }
 
@@ -23,6 +25,15 @@ class App extends Component {
     this.getDirectoryArray();
     this.getCountiesArray();
     // console.log(this.directoryIndex);
+  }
+  
+  componentDidUpdate() {
+    const directoryComponent = document.querySelector(".directory_pane");
+    if (directoryComponent.innerHTML ==="<ul></ul>" && this.state.noResults === false) {
+      this.setState({ noResults: true });
+    } else if (directoryComponent.innerHTML !== "<ul></ul>" && this.state.noResults === true) {
+      this.setState({ noResults: false });
+    }
   }
 
   // Get initial array from external source.
@@ -60,62 +71,67 @@ class App extends Component {
     }
   };
   
-    updateDirectoryArray = () => {
-        this.setState(updatedDirectoryArray => ({
-          updatedDirectoryArray: this.state.directoryIndex.reduce(((arr, site) => {
-            // console.log(site.style, this.state.siteType, arr);
+    // updateDirectoryArray = () => {
+    //     this.setState(updatedDirectoryArray => ({
+    //       updatedDirectoryArray: this.state.directoryIndex.reduce(((arr, site) => {
+    //         // console.log(site.style, this.state.siteType, arr);
 
 
-            // Main filter logic
-            // if (this.state.siteType !== '' && this.state.foodAvailable === '') {
-            //   if (site.style === this.state.siteType) {
-            //     console.log(arr, "array");
-            //     arr.push(site);
-            //     return arr;
-            //   }
-            // } else if (this.state.siteType !== '' && this.state.foodAvailable !== '') {
-            //   if (site.style === this.state.siteType && site.food === this.state.foodAvailable) {
-            //     console.log(arr, "array");
-            //     arr.push(site);
-            //     return arr;
-            //   }
-            // } else if (this.state.siteType === '' && this.state.foodAvailable !== '') {
-            //   if (site.food === this.state.foodAvailable) {
-            //     console.log(arr, "array");
-            //     arr.push(site);
-            //     return arr;
-            //   }
-            // } 
-
-
-
+    //         // Main filter logic
+    //         // if (this.state.siteType !== '' && this.state.foodAvailable === '') {
+    //         //   if (site.style === this.state.siteType) {
+    //         //     console.log(arr, "array");
+    //         //     arr.push(site);
+    //         //     return arr;
+    //         //   }
+    //         // } else if (this.state.siteType !== '' && this.state.foodAvailable !== '') {
+    //         //   if (site.style === this.state.siteType && site.food === this.state.foodAvailable) {
+    //         //     console.log(arr, "array");
+    //         //     arr.push(site);
+    //         //     return arr;
+    //         //   }
+    //         // } else if (this.state.siteType === '' && this.state.foodAvailable !== '') {
+    //         //   if (site.food === this.state.foodAvailable) {
+    //         //     console.log(arr, "array");
+    //         //     arr.push(site);
+    //         //     return arr;
+    //         //   }
+    //         // } 
 
 
 
-            return arr;
-          }), []
-          )
 
-        }), () => {
-          console.log(this.state.updatedDirectoryArray, "updated");
-        })
 
-    }
+
+    //         return arr;
+    //       }), []
+    //       )
+
+    //     }), () => {
+    //       console.log(this.state.updatedDirectoryArray, "updated");
+    //     })
+
+    // }
 
   toggleFilters = (current) => {
     this.setState({ filtersOpen: current })
   }
   
   updateFilters = (event) => {
+
+    if (event.target.value === "RESET") {
+      this.setState({ siteType: '' });
+      this.setState({ foodAvailable: '' });
+      this.setState({ ukaraStatus: undefined });
+      this.setState({ siteCounty: '' });
+          
+    }
+
     if (event.target.id === "site_type") {
-      this.setState({ siteType: event.target.value }
-        //, this.updateDirectoryArray
-        );
+      this.setState({ siteType: event.target.value });
     }
     if (event.target.id === "food_available") {
-      this.setState({ foodAvailable: event.target.value }
-        //, this.updateDirectoryArray
-        );
+      this.setState({ foodAvailable: event.target.value });
     }
     if (event.target.id === "ukara") {
       if (event.target.value === 'true') {
@@ -128,12 +144,8 @@ class App extends Component {
       }
       
       if (event.target.id === "county") {
-        console.log(event.target.value)
-        this.setState({ siteCounty: event.target.value.toLowerCase() }
-          //, this.updateDirectoryArray
-          );
+        this.setState({ siteCounty: event.target.value.toLowerCase() });
       }
-    // this.updateDirectoryArray(event.target.id, event.target.value);
   }
 
   render() {
@@ -146,6 +158,7 @@ class App extends Component {
         filterUkara={this.state.ukaraStatus} 
         filterCounty={this.state.siteCounty} 
         />
+        {this.state.noResults ? <NoResultCard /> : ''}
         <FilterOpenToggle 
         toggleFilters={this.toggleFilters}
         filtersOpen={this.state.filtersOpen}

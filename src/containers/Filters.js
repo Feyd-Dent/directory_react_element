@@ -54,11 +54,18 @@ const Filters =({ toggleFilters, filtersOpen, siteType, foodAvailable, updateFil
          <div className="site_type dropdown">
             <p>
                 <label htmlFor="county">Location: </label>
-
                 <select value={siteCounty} onChange={updateFilters} name="county" id="county">
                     <option value="" defaultValue>Any</option>
                     {counties.map((county) =>(<option value={county.toLowerCase()}>{county}</option>))};
                 </select>
+            </p>
+         </div>
+         
+         <div className="site_type dropdown">
+            <p>
+                <label htmlFor="RESET">Reset Filters: </label>
+
+                <input type="submit" value="RESET" onClick={updateFilters} />
             </p>
          </div>
 
