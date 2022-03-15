@@ -19,10 +19,11 @@
     bottom: -300px;
     overflow: hidden;
 } */
-.filters {
+.filters, .keylegend {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+    justify-content: flex-start;
     /* position: sticky; */
     background-color: white;
     /* height: 100vh; */
@@ -44,16 +45,70 @@
     .mobile-only {
         display:none;
     }
-    .filter_pane {
-        width: calc(100vw - 604px);
+    .filter_pane, .filter_pane.show {
+        display: block;
         position: fixed;
-        top: 0;
-        right:0;
+        bottom: 0;
+        height: 260px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.9);
+        overflow: hidden;
+    }
+
+    .filter_key_box {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: stretch;
+        position: relative;
+        /* top: auto;
+        bottom: 0; */
+        /* flex-grow:2; */
         z-index: 10;
     }
-    .filters {
+    .filters, .keylegend {
+        /* position: relative; */
+        /* bottom: 0;
+        right:0; */
         border: 5px solid #cacaca;
-        padding: 10px        
+        padding: 10px;
+        /* background-color: white;  */
+        flex-grow: 2;
+        bottom: auto;
+        margin:0;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .mobile-only {
+        display:none;
+    }
+    .filter_pane, .filter_pane.show {
+        position: relative;
+        height: 100%;
+    }
+    .filter_key_box {
+        /* width: calc(100vw - 604px); */
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        position: fixed;
+        /* top: 0; */
+        /* right: 0; */
+        /* bottom: auto; */
+        /* flex-grow:2; */
+        bottom: auto;
+    }
+    .filters, .keylegend {
+        /* z-index: 10; */
+        flex-grow:1;
+        /* position: sticky;
+        top: 0;
+        right:0;
+        border: 5px solid #cacaca;
+        padding: 10px         */
     }
     
 }

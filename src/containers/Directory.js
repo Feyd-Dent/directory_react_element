@@ -2,20 +2,24 @@ import React from 'react';
 import Card from './Card';
 import './Directory.css';
 
-const Directory =({ sitelist, filterSiteType, filterFood, filterUkara }) => {
+const Directory =({ sitelist, filterSiteType, filterFood, filterUkara, filterCounty }) => {
 
     return (
     <div className="directory_pane">
       <ul>
       {sitelist.map((gamesite, i) => {
         if(filterSiteType !== sitelist[i].style && filterSiteType !== '') {
-          return
+          return null;
         };
         if(filterFood !== sitelist[i].food && filterFood !== '') {
-          return
+          return null;
         };
         if(filterUkara !== sitelist[i].ukara && filterUkara !== undefined) {
-          return
+          return null;
+        };
+        if(filterCounty.toLowerCase() !== sitelist[i].county.toLowerCase() && filterCounty !== '') {
+          console.log("filter", filterCounty.toLowerCase(), "Sitelist",  sitelist[i].county.toLowerCase());
+          return null;
         };
         return (
           <Card 
@@ -40,6 +44,7 @@ const Directory =({ sitelist, filterSiteType, filterFood, filterUkara }) => {
           siteFPS3={sitelist[i].fps3}
           siteAge={sitelist[i].age}
           siteDescription={sitelist[i].description}
+          siteLink={sitelist[i].link}
           />
         )
       })}

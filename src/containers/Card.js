@@ -10,7 +10,7 @@ import SiteAge from '../components/SiteAge';
 import SiteDescription from '../components/SiteDescription';
 import './Card.css';
 
-const Card = ({ siteKey, siteLogo, siteTitle, siteAddress, siteTown, siteCounty, sitePostcode, sitePhone, siteWebsite, siteFacebook, siteStyle, ukaraStatus, siteFood, siteCost, siteFPS1, siteFPS2, siteFPS3, siteAge, siteDescription, siteCostActual, siteCostActualRental }) => {
+const Card = ({ siteKey, siteLogo, siteTitle, siteAddress, siteTown, siteCounty, sitePostcode, sitePhone, siteWebsite, siteFacebook, siteStyle, ukaraStatus, siteFood, siteCost, siteFPS1, siteFPS2, siteFPS3, siteAge, siteDescription, siteCostActual, siteCostActualRental, siteLink }) => {
 
 
   const [isClicked, setIsClicked] = useState(false);
@@ -32,7 +32,7 @@ const Card = ({ siteKey, siteLogo, siteTitle, siteAddress, siteTown, siteCounty,
         setIsClicked(!isClicked)}}}
         >
       <div className={!isClicked ? "directory-card mini" : "directory-card maxi"}>
-        <img className={!isClicked ? "card-logo mini" : "card-logo maxi"} src={siteLogo} alt="The Gamesite Logo"
+        <img className={!isClicked ? "card-logo mini" : "card-logo maxi"} src={(window.location.hostname === "localhost") ? "/directory_react_element/" + siteLogo : siteLogo} alt="The Gamesite Logo"
             onClick={() => {
               if(isClicked) {
                 setIsClicked(!isClicked)}}}
@@ -107,7 +107,7 @@ const Card = ({ siteKey, siteLogo, siteTitle, siteAddress, siteTown, siteCounty,
         <p className={!isClicked ? "card-link mini" : "card-link maxi"}>
           {!isClicked ?
           `Click to expand ID.` :
-          <a href={siteKey}>Open in New Window.</a>
+          <a href={siteLink}>Open in New Window.</a>
           }
         </p>
       </div>

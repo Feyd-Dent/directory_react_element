@@ -13,7 +13,7 @@ const SiteDescription = ({ descriptionInput, expanded, setClicked }) => {
                   setClicked(!expanded)}}}
                   >
                 <h6>Description</h6>
-                <p>{descriptionInput}</p>
+                <p>{descriptionInput ? descriptionInput : 'No Description Supplied'}</p>
             </div>
         );
     }; 
